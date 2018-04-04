@@ -37,12 +37,24 @@ export class TodoService extends Init {
   }
 
   updateTodo(oldText, newText){
-  	console.log(oldText, newText);
   	var todos = JSON.parse(localStorage.getItem('todos'));
 
   	for(var i = 0; i < todos.length; i++){
   		if(todos[i].text == oldText) {
   			todos[i].text = newText;
+  		}
+  	}
+
+  	// Set New Todos
+  	localStorage.setItem('todos', JSON.stringify(todos));
+  }
+
+  checkTodo(todoText) {
+  	var todos = JSON.parse(localStorage.getItem('todos'));
+
+  	for(var i = 0; i < todos.length; i++){
+  		if(todos[i].text == todoText) {
+  			todos[i].check = !todos[i].check;
   		}
   	}
 

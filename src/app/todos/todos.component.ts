@@ -19,7 +19,8 @@ export class TodosComponent implements OnInit {
 
   addTodo(){
   	var newTodo = {
-  		text: this.text
+  		text: this.text,
+  		check: false
   	}
   	this.todos.push(newTodo);
 
@@ -50,6 +51,10 @@ export class TodosComponent implements OnInit {
   	}
 
   	this._todoService.updateTodo(this.oldText, this.text);
+  }
+
+  checkTodo(todoText){
+  	this._todoService.checkTodo(todoText);
   }
 
 }

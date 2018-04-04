@@ -4,13 +4,16 @@ export class Init{
 			console.log('No Todos found');
 			var todos = [
 				{
-					text: 'Football'
+					text: 'Football',
+					check: false
 				},
 				{
-					text: 'Basketball'
+					text: 'Basketball',
+					check: false
 				},
 				{
-					text: 'Tennis'
+					text: 'Tennis',
+					check: false
 				}
 			];
 
